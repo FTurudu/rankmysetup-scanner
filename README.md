@@ -48,6 +48,7 @@ Sonuç / Output: .NET Framework 4.8 hedefli tek bir `.exe`; Windows 10 ve 11'de 
 
 ## Sürümler / Changelog
 
+- **1.2.2** · Güç planı adı Windows'un konsol kod sayfasıyla okunur (ör. Norveççe "Høy ytelse" artık bozulmaz). · The power plan name is read with Windows' console code page (e.g. Norwegian "Høy ytelse" is no longer garbled).
 - **1.2** · Daha uzun ve tutarlı performans testi (aynı bilgisayardaki yavaşlamaları tespit etmek için); güç planı, Oyun Modu, GPU zamanlama ve pil sağlığı okunur. · Longer, consistent performance test (to detect slowdowns on the same PC); reads power plan, Game Mode, GPU scheduling and battery health.
 - **1.0.1** · Program açılınca siteye haber verir; site böylece programın kurulu olup olmadığını anlar. · Notifies the site when it opens so the site knows it’s installed.
 - **1.0.0** · Yeni arayüz (sitedeki tasarımla aynı), Türkçe/İngilizce (Windows diline göre), mouse/klavye/kulaklık algılama, kablosuz alıcı markası, laptop model adı, rapor programın dilinde açılır. · New UI matching the website, Turkish/English based on the Windows language, mouse/keyboard/headset detection, wireless receiver brand, laptop model name, report opens in the app's language.
