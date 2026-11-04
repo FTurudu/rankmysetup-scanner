@@ -1,0 +1,35 @@
+name: Build
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build
+        run: dotnet build RankMySetupScanner/RankMySetupScanner.csproj -c Release -o out
+
+      - name: Upload build
+        id: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: RankMySetupScanner
+          path: out/RankMySetupScanner.exe
+
+      # SignPath Foundation başvurusu onaylanınca bu adımı aç.
+      # Değerleri SignPath panelinden al ve güncel belgeleriyle karşılaştır.
+      # - name: Sign with SignPath
+      #   uses: signpath/github-action-submit-signing-request@v1
+      #   with:
+      #     api-token: ${{ secrets.SIGNPATH_API_TOKEN }}
+      #     organization-id: ${{ vars.SIGNPATH_ORGANIZATION_ID }}
+      #     project-slug: rankmysetup-scanner
+      #     signing-policy-slug: release-signing
+      #     github-artifact-id: ${{ steps.upload.outputs.artifact-id }}
+      #     wait-for-completion: true
+      #     output-artifact-directory: signed
